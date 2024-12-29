@@ -56,5 +56,9 @@
         "temp/": true,
         "Temp/": true
     },
+<<<<<<< HEAD
     "dotnet.defaultSolution": "sicole-unity.sln"
+=======
+    "dotnet.defaultSolution": "Sicole.sln"
+>>>>>>> fe8cd579e16944ece3186202be7514ff5f2e3052
 }
