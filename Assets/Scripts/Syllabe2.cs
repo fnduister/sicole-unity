@@ -71,6 +71,17 @@ public class Syllabe2 : MonoBehaviour
             SoundButtons[i].GetComponent<SoundButton>().syllabus = syllabes[i];
         }
     }
+    
+    // function listening to progess bar event
+    public void OnProgressBarChange(float progress)
+    {
+            Debug.Log($"progress value: {progress}");
+        if (progress == 1)
+        {
+            Debug.Log($"max was reached: {progress}");
+            // UpdateGameState();
+        }
+    }
 
     private void UpdateGameState()
     {
