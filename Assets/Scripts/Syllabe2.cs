@@ -1,41 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Syllabe2 : MonoBehaviour
+public class Syllabe2 : SyllabusGameManager
 {
     public string[] PossibleSyllabes = new string[8];
     public GameObject[] Letterbuttons = new GameObject[8];
     public GameObject[] SoundButtons = new GameObject[4];
     public GameObject[] AnswerButtons = new GameObject[8];
-    public TextMeshProUGUI RoundDisplay;
-    public TextMeshProUGUI MaxRoundDisplay;
-    public GameObject GoodMoveDisplay;
-    public GameObject BadMoveDisplay;
-    private int BadMove = 0;
-    private int GoodMove = 0;
-    public int MaxRound = 3;
-    private int _currentRound = 1;
-    public int MaxStepsPerRound = 10;
-    public int CurrentStep = 0;
-    public AudioVoice PositiveAudioVoice; 
-    public AudioVoice NegativeAudioVoice; 
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void SetRound()
     {
-        setRound();
-        RoundDisplay.text = _currentRound.ToString();
-        MaxRoundDisplay.text = MaxRound.ToString();
-        GoodMoveDisplay.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = GoodMove.ToString();
-        BadMoveDisplay.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = BadMove.ToString();
-
-    }
-
-    private void setRound()
-    {
+        ProgressBarTimer.Start();
+        
         // reset the letter buttons
         foreach (var button in Letterbuttons)
         {
@@ -72,59 +49,17 @@ public class Syllabe2 : MonoBehaviour
         }
     }
     
-    // function listening to progess bar event
-    public void OnProgressBarChange(float progress)
-    {
-            Debug.Log($"progress value: {progress}");
-        if (progress == 1)
-        {
-            Debug.Log($"max was reached: {progress}");
-            // UpdateGameState();
-        }
-    }
-
-    private void UpdateGameState()
+    protected override void UpdateGameState()
     {
         if (_currentRound < MaxRound)
         {
             _currentRound++;
-            RoundDisplay.text = _currentRound.ToString();
-            setRound();
+            // RoundDisplay = $"{_currentRound.ToString()}/{MaxRound.ToString()}";
+            SetRound();
         }
         else
         {
             Debug.Log("Game Over");
         }
-    }
-    
-    public void ScoreUp()
-    {
-        GoodMoveDisplay.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = (++GoodMove).ToString();
-        AudioManager.Play(PositiveAudioVoice.GetRandomClip());
-    }
-    
-    public void ScoreDown()
-    {
-        BadMoveDisplay.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = (++BadMove).ToString();
-        AudioManager.Play(NegativeAudioVoice.GetRandomClip());
-    }
-    
-    public int[] GenerateDistinctIntegers(int n, int minValue, int maxValue)
-    {
-        HashSet<int> uniqueIntegers = new HashSet<int>();
-        
-        while (uniqueIntegers.Count < n)
-        {
-            int newInt = Random.Range(minValue, maxValue);
-            uniqueIntegers.Add(newInt);
-        }
-        
-        return uniqueIntegers.ToArray();
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

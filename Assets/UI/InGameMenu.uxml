@@ -1,0 +1,30 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/InGameMenu.uss?fileID=7433441132597879392&amp;guid=827d3c369cbd8f04a9c83427e6d50f03&amp;type=3#InGameMenu" />
+    <engine:GroupBox name="GroupBox" picking-mode="Ignore" class="main-in-game-menu">
+        <engine:GroupBox class="header-in-game-menu">
+            <engine:Button text="Back" icon-image="project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-3753015318093942961&amp;guid=47119ce6fe843eb4086ec2b8bb071e47&amp;type=3#arrow-left" />
+            <engine:GroupBox class="score-in-game-menu">
+                <engine:Label text="5" name="goodMoves" data-source-type="SyllabusGameManager, Assembly-CSharp" class="score-good-moves">
+                    <Bindings>
+                        <engine:DataBinding property="text" data-source-path="GoodMoves" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:Label>
+                <engine:Label text="15" name="moves" class="score-moves">
+                    <Bindings>
+                        <engine:DataBinding property="text" data-source-path="Moves" data-source-type="SyllabusGameManager, Assembly-CSharp" binding-mode="ToTarget" />
+                    </Bindings>
+                </engine:Label>
+            </engine:GroupBox>
+            <engine:Label text="1/3" name="rounds" data-source-type="Syllabe2, Assembly-CSharp" data-source-path="RoundDisplay" class="round-label">
+                <Bindings>
+                    <engine:DataBinding property="text" data-source-path="RoundDisplay" data-source-type="SyllabusGameManager, Assembly-CSharp" binding-mode="ToTarget" />
+                </Bindings>
+            </engine:Label>
+        </engine:GroupBox>
+        <engine:ProgressBar value="10" title="my-progress" class="progress-bar">
+            <Bindings>
+                <engine:DataBinding property="value" data-source-path="roundProgress" binding-mode="ToTarget" data-source-type="SyllabusGameManager, Assembly-CSharp" />
+            </Bindings>
+        </engine:ProgressBar>
+    </engine:GroupBox>
+</engine:UXML>

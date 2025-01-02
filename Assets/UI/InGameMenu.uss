@@ -1,0 +1,66 @@
+.header-in-game-menu {
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100px;
+    align-items: center;
+    padding: 5px;
+    background-color: #BDC3C7;
+}
+
+.header-in-game-menu Button {
+    width: 75px;
+    background-color: rgb(243, 156, 18);
+}
+
+.header-in-game-menu Button:hover {
+    background-color: red;
+}
+
+.score-good-moves {
+    background-color: #2ECC71;
+    margin-right: 5px;
+}
+
+.main-in-game-menu {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.score-in-game-menu {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    flex: 1;
+}
+
+.score-in-game-menu Label {
+    height: 100%;
+}
+
+.header-in-game-menu Label {
+    flex-basis: 50;
+    -unity-text-align: middle-center;
+    border-width: 1px;
+    border-color: #999999;
+}
+
+.score-moves {
+    background-color: #E67E22;
+}
+
+.score-points-in-game-menu {
+    background-color: aqua;
+}
+
+.round-label {
+    background-color: #ECF0F1;
+    height: 50px;
+}
+
+.progress-bar {
+    margin-bottom: 15px;
+}
