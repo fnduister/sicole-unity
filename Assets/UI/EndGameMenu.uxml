@@ -1,0 +1,38 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/EndGameMenu.uss?fileID=7433441132597879392&amp;guid=112b18498ee933241ad658ea18a222fa&amp;type=3#EndGameMenu" />
+    <Style src="project://database/Assets/UI/HeaderMenu.uss?fileID=7433441132597879392&amp;guid=078c485e3be24744ca48850f418a338f&amp;type=3#HeaderMenu" />
+    <Style src="project://database/Assets/UI/ButtonAnimations.uss?fileID=7433441132597879392&amp;guid=3439b89e80bccbd49b0036ccc7d26871&amp;type=3#ButtonAnimations" />
+    <engine:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.6); justify-content: center; align-items: center; height: 100%;">
+        <engine:VisualElement name="Panel" style="flex-grow: 0; width: 85%; height: 65%; background-color: rgb(217, 217, 217); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; align-items: center; justify-content: space-between;">
+            <engine:VisualElement name="Header" class="header" style="flex-grow: 0; height: 100px;">
+                <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
+                    <engine:Button icon-image="project://database/Assets/Sprites/Icons/home-2-line.png?fileID=2800000&amp;guid=0528c63950cab5043bb56498ccff3616&amp;type=3#home-2-line" name="HomeButton" class="grow glow" />
+                </Shadow>
+                <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
+                    <engine:Button icon-image="project://database/Assets/Sprites/Icons/settings-2-fill.png?fileID=2800000&amp;guid=b21fae801bc153f4b8a5a6484b87d6a0&amp;type=3#settings-2-fill" name="SettingButton" />
+                </Shadow>
+            </engine:VisualElement>
+            <engine:Label text="Results" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&amp;guid=bdc08099c07180d4fbd441c577ab1898&amp;type=3#Oregano-Regular&quot;); font-size: 60px;" />
+            <engine:VisualElement style="flex-grow: 1; align-items: center; justify-content: space-around;">
+                <engine:VisualElement style="flex-grow: 0; flex-direction: row; flex-shrink: 0;">
+                    <engine:Label name="Star1" class="star star-half" />
+                    <engine:Label name="Star2" class="star star-full" />
+                    <engine:Label name="Star3" class="star-empty star" style="background-image: resource(&apos;Icons/star-line&apos;);" />
+                </engine:VisualElement>
+                <engine:VisualElement class="score-panel" style="flex-grow: 0; flex-direction: row; width: 100%; background-color: rgba(255, 255, 255, 0.79); padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px;">
+                    <engine:VisualElement style="flex-grow: 1; align-items: center;">
+                        <engine:Label text="Score" style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;); font-size: 14px;" />
+                        <engine:Button text="64%" name="ScoreButton" />
+                    </engine:VisualElement>
+                    <engine:VisualElement style="flex-grow: 1; align-items: center;">
+                        <engine:Label text="Best" style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;); font-size: 14px;" />
+                        <engine:Button text="0%" name="BestScoreButton" />
+                    </engine:VisualElement>
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement class="pause-button">
+                <engine:Button text=" Play Again" icon-image="project://database/Assets/Sprites/Icons/reset-left-line.svg?fileID=7388822144124034973&amp;guid=c3fc028c3ffe8f54aa6941b5b8b281ff&amp;type=3#reset-left-line" name="PlayAgainButton" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

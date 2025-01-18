@@ -1,0 +1,51 @@
+.play-again {
+    border-radius: 15px;
+}
+
+.star-half {
+    background-image: resource('Icons/star-half-fill');
+}
+
+.star-full {
+    background-image: resource('Icons/star-fill');
+}
+
+.star {
+    width: 70px;
+    height: 70px;
+    -unity-background-image-tint-color: rgb(249, 117, 46);
+}
+
+.star-empty {
+    background-image: resource('Icons/star-line');
+}
+
+.score-panel Button {
+    width: 100px;
+    height: 50px;
+    -unity-font-style: bold;
+    border-width: 0;
+    border-radius: 15px;
+    background-color: rgb(130, 192, 250);
+}
+
+.pause-button {
+    width: 80%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-bottom: 30px;
+}
+
+.pause-button Button {
+    background-color: rgb(229, 184, 112);
+    color: rgb(255, 255, 255);
+    height: 75px;
+    font-size: 20px;
+    border-width: 0;
+    border-radius: 10px;
+}
+
+.pause-button Button:hover {
+    background-color: rgb(248, 157, 10);
+    transition: 1s ease;
+}

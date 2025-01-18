@@ -1,0 +1,49 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/RealHomeMenu.uss?fileID=7433441132597879392&amp;guid=2bbc34a7cb2d86e47b5e46cc7a74f36d&amp;type=3#RealHomeMenu" />
+    <Style src="project://database/Assets/UI/HeaderMenu.uss?fileID=7433441132597879392&amp;guid=078c485e3be24744ca48850f418a338f&amp;type=3#HeaderMenu" />
+    <engine:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Capture%20d%E2%80%99%C3%A9cran%202025-01-05%20012520.png?fileID=2800000&amp;guid=7dff896e8a82a6f41bcc4fbfc76d9488&amp;type=3#Capture d’écran 2025-01-05 012520&quot;);">
+        <engine:VisualElement name="Header" class="header" style="flex-grow: 0; height: 100px; flex-direction: row-reverse;">
+            <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
+                <engine:Button icon-image="project://database/Assets/Sprites/Icons/settings-2-fill.png?fileID=2800000&amp;guid=b21fae801bc153f4b8a5a6484b87d6a0&amp;type=3#settings-2-fill" />
+            </Shadow>
+        </engine:VisualElement>
+        <engine:VisualElement name="TitleContainer" style="flex-grow: 1; align-items: center; justify-content: center;">
+            <engine:Label text="Sicole" name="Sicole" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/OvertheRainbow-Regular.ttf?fileID=12800000&amp;guid=79ece736ddf520c4d9b9fc2e236ee44b&amp;type=3#OvertheRainbow-Regular&quot;); font-size: 82px;" />
+            <engine:Label text="L&apos;école à la maison" class="sub-title" />
+        </engine:VisualElement>
+        <engine:VisualElement name="PanelContainer" class="panel-container" style="flex-direction: row; align-items: stretch; justify-content: space-between; align-self: stretch;">
+            <engine:VisualElement class="age-panel-box" style="flex-grow: 1; border-left-color: rgb(231, 145, 155); border-right-color: rgb(231, 145, 155); border-top-color: rgb(231, 145, 155); border-bottom-color: rgb(231, 145, 155);">
+                <engine:Button name="Below4Button" class="panel-box">
+                    <engine:Label text="Label" style="background-image: url(&quot;project://database/Assets/Sprites/kid6.png?fileID=2800000&amp;guid=1bbd173e9491a9f41a7d6e0906495a2c&amp;type=3#kid6&quot;); width: 100%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
+                </engine:Button>
+                <engine:VisualElement name="VisualElement" class="age-bubble">
+                    <engine:Label text="4-" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement class="age-panel-box" style="flex-grow: 1; border-left-color: rgb(132, 239, 140); border-right-color: rgb(132, 239, 140); border-top-color: rgb(132, 239, 140); border-bottom-color: rgb(132, 239, 140);">
+                <engine:Button name="Between4And8Button" class="panel-box">
+                    <engine:Label text="Label" style="background-image: url(&quot;project://database/Assets/Sprites/kid5.png?fileID=2800000&amp;guid=6a3e0a74aff6b8143b2cad213da45261&amp;type=3#kid5&quot;); width: 100%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
+                </engine:Button>
+                <engine:VisualElement name="VisualElement" class="age-bubble" style="background-color: rgb(133, 239, 141);">
+                    <engine:Label text="4-8" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement class="age-panel-box" style="flex-grow: 1; border-left-color: rgb(235, 210, 86); border-right-color: rgb(235, 210, 86); border-top-color: rgb(235, 210, 86); border-bottom-color: rgb(235, 210, 86);">
+                <engine:Button name="Between8And12Button" class="panel-box">
+                    <engine:Label text="Label" style="background-image: url(&quot;project://database/Assets/Sprites/kid8.png?fileID=2800000&amp;guid=9b50471c83107a748b569b49b99787c2&amp;type=3#kid8&quot;); width: 100%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
+                </engine:Button>
+                <engine:VisualElement name="VisualElement" class="age-bubble" style="background-color: rgb(232, 204, 63);">
+                    <engine:Label text="8-12" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+            <engine:VisualElement class="age-panel-box" style="flex-grow: 1; border-left-color: rgb(130, 244, 237); border-right-color: rgb(130, 244, 237); border-top-color: rgb(130, 244, 237); border-bottom-color: rgb(130, 244, 237);">
+                <engine:Button name="Above12Button" class="panel-box">
+                    <engine:Label text="Label" style="background-image: url(&quot;project://database/Assets/Sprites/kid0.png?fileID=2800000&amp;guid=8b5f2aad0701bd844a477cdbfe50b201&amp;type=3#kid0&quot;); width: 100%; height: 100%; -unity-background-scale-mode: scale-to-fit;" />
+                </engine:Button>
+                <engine:VisualElement name="VisualElement" class="age-bubble" style="background-color: rgb(130, 244, 237); border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255);">
+                    <engine:Label text="12+" />
+                </engine:VisualElement>
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

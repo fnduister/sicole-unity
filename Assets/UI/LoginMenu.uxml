@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/mainMenu.uss?fileID=7433441132597879392&amp;guid=5fb007e3153ceb5459a5b560625e8294&amp;type=3#mainMenu" />
+    <ui:VisualElement name="MainContainer" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Capture%20d%E2%80%99%C3%A9cran%202025-01-05%20012520.png?fileID=2800000&amp;guid=7dff896e8a82a6f41bcc4fbfc76d9488&amp;type=3#Capture d’écran 2025-01-05 012520&quot;); background-repeat: no-repeat no-repeat; justify-content: center; align-items: center;">
+        <ui:VisualElement name="Content" style="flex-grow: 0; flex-basis: 50%; width: 70%; height: 50%; justify-content: flex-start; align-items: center;">
+            <ui:Label text="Sicole" name="Title" class="title" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/OvertheRainbow-Regular.ttf?fileID=12800000&amp;guid=79ece736ddf520c4d9b9fc2e236ee44b&amp;type=3#OvertheRainbow-Regular&quot;); font-size: 90px;" />
+            <ui:Label text="L&apos;école à la maison" class="sub-title" style="font-size: 32px;" />
+            <ui:TextField placeholder-text="Username" view-data-key="Username" name="Username" class="input" />
+            <ui:TextField placeholder-text="Password" view-data-key="Password" name="Password" class="input" />
+            <ui:Button text="Sign in" view-data-key="Login" name="Login" style="margin-top: 20px; margin-bottom: 12px; width: 348px; background-color: rgb(226, 101, 157); color: rgb(255, 255, 255); height: 58px;" />
+            <ui:Button text="Sikp Login" view-data-key="SkipLogin" name="SkipLogin" style="background-color: rgb(226, 101, 157); color: rgb(255, 255, 255);" />
+            <ui:Label text="Forgot password ?" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

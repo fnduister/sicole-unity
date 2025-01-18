@@ -1,0 +1,62 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/GameList.uss?fileID=7433441132597879392&amp;guid=45cd9535e0ce7bf4f82ff3af1c0c0f6c&amp;type=3#GameList" />
+    <Style src="project://database/Assets/UI/HeaderMenu.uss?fileID=7433441132597879392&amp;guid=078c485e3be24744ca48850f418a338f&amp;type=3#HeaderMenu" />
+    <engine:VisualElement style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Capture%20d%E2%80%99%C3%A9cran%202025-01-05%20012520.png?fileID=2800000&amp;guid=7dff896e8a82a6f41bcc4fbfc76d9488&amp;type=3#Capture d’écran 2025-01-05 012520&quot;);">
+        <engine:VisualElement name="Header" class="header" style="flex-grow: 0; height: 100px; flex-direction: row-reverse;">
+            <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
+                <engine:Button icon-image="project://database/Assets/Sprites/Icons/settings-2-fill.png?fileID=2800000&amp;guid=b21fae801bc153f4b8a5a6484b87d6a0&amp;type=3#settings-2-fill" name="SettingsButton" />
+            </Shadow>
+            <engine:TextField placeholder-text="    Search..." class="search" />
+            <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
+                <engine:Button icon-image="project://database/Assets/Sprites/Icons/home-2-line.png?fileID=2800000&amp;guid=0528c63950cab5043bb56498ccff3616&amp;type=3#home-2-line" name="HomeButton" />
+            </Shadow>
+        </engine:VisualElement>
+        <engine:VisualElement name="VisualElement" style="flex-grow: 1; margin-top: 20px; margin-right: 24px; margin-bottom: 24px; margin-left: 24px; align-items: center; justify-content: space-evenly;">
+            <engine:VisualElement name="VisualElement" style="flex-grow: 1; width: 100%;">
+                <engine:ScrollView mode="Horizontal" name="ScrollView" class="scroll-box">
+                    <engine:VisualElement class="game-box">
+                        <engine:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row; justify-content: flex-end; flex-shrink: 0; height: 32px; width: 100px; align-self: flex-end; margin-bottom: -10px;">
+                            <engine:Label name="Star1" style="background-image: url(&quot;project://database/Assets/Sprites/Icons/star-half-fill%20(1).svg?fileID=7388822144124034973&amp;guid=ca1bd8fa14f3e864b81b47f03704e029&amp;type=3#star-half-fill (1)&quot;); width: 15px; -unity-background-image-tint-color: rgb(224, 150, 64); height: 15px;" />
+                            <engine:Label name="Star1" style="background-image: url(&quot;project://database/Assets/Sprites/Icons/star-half-fill%20(1).svg?fileID=7388822144124034973&amp;guid=ca1bd8fa14f3e864b81b47f03704e029&amp;type=3#star-half-fill (1)&quot;); width: 15px; -unity-background-image-tint-color: rgb(224, 150, 64); height: 15px;" />
+                            <engine:Label name="Star1" style="background-image: url(&quot;project://database/Assets/Sprites/Icons/star-half-fill%20(1).svg?fileID=7388822144124034973&amp;guid=ca1bd8fa14f3e864b81b47f03704e029&amp;type=3#star-half-fill (1)&quot;); width: 15px; -unity-background-image-tint-color: rgb(224, 150, 64); height: 15px;" />
+                        </engine:VisualElement>
+                        <engine:Label text="Syllabe 1" selectable="true" style="margin-bottom: 13px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;);" />
+                        <engine:Label style="background-image: url(&quot;project://database/Assets/Sprites/syllabes1.jpg?fileID=2800000&amp;guid=28e41c51b77f0104ea356ee883935bd1&amp;type=3#syllabes1&quot;); margin-bottom: 14px; flex-basis: 100px; flex-shrink: 1; flex-grow: 1; width: 150px;" />
+                        <engine:Button text="Play" name="Syllabus1Button" />
+                    </engine:VisualElement>
+                </engine:ScrollView>
+                <engine:Label text="Popular" class="game-list-title" />
+            </engine:VisualElement>
+            <engine:VisualElement style="flex-grow: 1; width: 100%;">
+                <engine:ScrollView mode="Horizontal" name="ScrollView" class="scroll-box">
+                    <engine:VisualElement class="game-box">
+                        <engine:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row; justify-content: flex-end; flex-shrink: 0; height: 32px; width: 100px; align-self: flex-end; margin-bottom: -10px;">
+                            <engine:Label name="Star1" style="background-image: url(&quot;project://database/Assets/Sprites/Icons/star-half-fill%20(1).svg?fileID=7388822144124034973&amp;guid=ca1bd8fa14f3e864b81b47f03704e029&amp;type=3#star-half-fill (1)&quot;); width: 15px; -unity-background-image-tint-color: rgb(224, 150, 64); height: 15px;" />
+                            <engine:Label name="Star1" style="background-image: url(&quot;project://database/Assets/Sprites/Icons/star-half-fill%20(1).svg?fileID=7388822144124034973&amp;guid=ca1bd8fa14f3e864b81b47f03704e029&amp;type=3#star-half-fill (1)&quot;); width: 15px; -unity-background-image-tint-color: rgb(224, 150, 64); height: 15px;" />
+                            <engine:Label name="Star1" style="background-image: url(&quot;project://database/Assets/Sprites/Icons/star-half-fill%20(1).svg?fileID=7388822144124034973&amp;guid=ca1bd8fa14f3e864b81b47f03704e029&amp;type=3#star-half-fill (1)&quot;); width: 15px; -unity-background-image-tint-color: rgb(224, 150, 64); height: 15px;" />
+                        </engine:VisualElement>
+                        <engine:Label text="Syllabe 1" selectable="true" style="margin-bottom: 13px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;);" />
+                        <engine:Label style="background-image: url(&quot;project://database/Assets/Sprites/syllabes1.jpg?fileID=2800000&amp;guid=28e41c51b77f0104ea356ee883935bd1&amp;type=3#syllabes1&quot;); margin-bottom: 14px; flex-basis: 100px; flex-shrink: 1; flex-grow: 1; width: 150px;" />
+                        <engine:Button text="Play" name="Syllabus1Button" />
+                    </engine:VisualElement>
+                </engine:ScrollView>
+                <engine:Label text="Recent" class="game-list-title" />
+            </engine:VisualElement>
+            <engine:VisualElement style="flex-grow: 1; width: 100%;">
+                <engine:ScrollView mode="Horizontal" name="ScrollView" class="scroll-box">
+                    <engine:VisualElement class="game-box">
+                        <engine:VisualElement name="VisualElement" style="flex-grow: 0; flex-direction: row; justify-content: flex-end; flex-shrink: 0; height: 32px; width: 100px; align-self: flex-end; margin-bottom: -10px;">
+                            <engine:Label name="Star1" style="background-image: url(&quot;project://database/Assets/Sprites/Icons/star-half-fill%20(1).svg?fileID=7388822144124034973&amp;guid=ca1bd8fa14f3e864b81b47f03704e029&amp;type=3#star-half-fill (1)&quot;); width: 15px; -unity-background-image-tint-color: rgb(224, 150, 64); height: 15px;" />
+                            <engine:Label name="Star1" style="background-image: url(&quot;project://database/Assets/Sprites/Icons/star-half-fill%20(1).svg?fileID=7388822144124034973&amp;guid=ca1bd8fa14f3e864b81b47f03704e029&amp;type=3#star-half-fill (1)&quot;); width: 15px; -unity-background-image-tint-color: rgb(224, 150, 64); height: 15px;" />
+                            <engine:Label name="Star1" style="background-image: url(&quot;project://database/Assets/Sprites/Icons/star-half-fill%20(1).svg?fileID=7388822144124034973&amp;guid=ca1bd8fa14f3e864b81b47f03704e029&amp;type=3#star-half-fill (1)&quot;); width: 15px; -unity-background-image-tint-color: rgb(224, 150, 64); height: 15px;" />
+                        </engine:VisualElement>
+                        <engine:Label text="Syllabe 1" selectable="true" style="margin-bottom: 13px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;);" />
+                        <engine:Label style="background-image: url(&quot;project://database/Assets/Sprites/syllabes1.jpg?fileID=2800000&amp;guid=28e41c51b77f0104ea356ee883935bd1&amp;type=3#syllabes1&quot;); margin-bottom: 14px; flex-basis: 100px; flex-shrink: 1; flex-grow: 1; width: 150px;" />
+                        <engine:Button text="Play" name="Syllabus1Button" />
+                    </engine:VisualElement>
+                </engine:ScrollView>
+                <engine:Label text="All Games" class="game-list-title" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

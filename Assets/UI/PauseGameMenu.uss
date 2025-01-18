@@ -1,0 +1,40 @@
+.pause-button {
+    background-color: rgb(229, 184, 112);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 75px;
+    font-size: 20px;
+}
+
+.image {
+    -unity-font-definition: url("project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&guid=bdc08099c07180d4fbd441c577ab1898&type=3#Oregano-Regular");
+    font-size: 52px;
+    align-self: center;
+    background-image: url("project://database/Assets/Sprites/2148369306.jpg?fileID=2800000&guid=bf1d6cb4107e5c940b53ba7e09122257&type=3#2148369306");
+    height: 332px;
+    width: 382px;
+}
+
+.pause-button {
+    background-color: rgb(229, 184, 112);
+    color: rgb(255, 255, 255);
+    margin: 5px 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.action-box Button:hover {
+    background-color: rgb(255, 255, 255);
+    transition: 1s ease;
+}
+
+.action-box {
+    flex-grow: 1;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}

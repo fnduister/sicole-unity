@@ -1,34 +1,51 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class SyllabusGameManager: MonoBehaviour
 {
-    public int GoodMoves = 0;
-    public int Moves = 0;
     public string RoundDisplay;
+    [Range(1, 50)]
     public int MaxRound = 3;
     protected int _currentRound = 1;
     public ProgressBarTimer ProgressBarTimer;
-    public int MaxStepsPerRound = 10;
-    public int CurrentStep = 0;
     public AudioVoice PositiveAudioVoice; 
     public AudioVoice NegativeAudioVoice;
     public float roundProgress = 0;
     public float roundLimit = 100;
     [Range(1, 50)]
     public float speed = 1;
-    
-    void Start()
+    public GameObject PauseGameMenu;
+    public GameObject GameOverMenu;
+
+    public virtual int GetScore()
     {
-        RoundDisplay = $"{_currentRound.ToString()}/{MaxRound.ToString()}";
+        throw new System.NotImplementedException();
+    }
+    
+    protected virtual void Reset()
+    {
+        ProgressBarTimer.OnProgressBarLimitReached -= UpdateGameState;
+        ProgressBarTimer.OnProgressBarUpdate -= OnProgressBarChange;
+        Time.timeScale = 1;
+        ProgressBarTimer.Reset();
+        SetRound();
+    }
+
+    public void Start()
+    {
+        Reset();
         ProgressBarTimer.OnProgressBarUpdate += OnProgressBarChange;
+        ProgressBarTimer.OnProgressBarLimitReached += UpdateGameState;
         ProgressBarTimer.ValueLimit = roundLimit;
         ProgressBarTimer.Speed = speed;
         ProgressBarTimer.IsOneShot = true;
-        SetRound();
+        // Instantiate a new pause menu and game over menu
+        PauseGameMenu.SetActive(false);
+        GameOverMenu.SetActive(false);
     }
 
     protected virtual void SetRound()
@@ -37,8 +54,9 @@ public class SyllabusGameManager: MonoBehaviour
     }
 
     // Remove listener when the object is destroyed
-    void OnDestroy()
+    void OnDisable()
     {
+        ProgressBarTimer.OnProgressBarLimitReached -= UpdateGameState;
         ProgressBarTimer.OnProgressBarUpdate -= OnProgressBarChange;
     }
 
@@ -59,29 +77,42 @@ public class SyllabusGameManager: MonoBehaviour
     private void OnProgressBarChange(float progress)
     {
         roundProgress = progress;
-        
-        if (progress > roundLimit)
-        {
-            Debug.Log($"max was reached: {progress}");
-            UpdateGameState();
-        }
     }
 
     protected virtual void UpdateGameState()
     {
         throw new System.NotImplementedException();
     }
-
-    public void ScoreUp()
+    
+    public virtual void PauseGame()
     {
-        ++GoodMoves;
-        ++Moves;
-        AudioManager.Play(PositiveAudioVoice.GetRandomClip());
+        Time.timeScale = 0;
+        PauseGameMenu.GetComponent<UIDocument>().sortingOrder = 50;
+        ProgressBarTimer.Pause();
+        PauseGameMenu.SetActive(true);
     }
     
-    public void ScoreDown()
+    public virtual void ResumeGame()
     {
-        ++Moves;
-        AudioManager.Play(NegativeAudioVoice.GetRandomClip());
+        Time.timeScale = 1;
+        ProgressBarTimer.Start();
+        PauseGameMenu.SetActive(false);
+    }
+
+    public virtual void ScoreUp()
+    {
+        CheckGameStatus();
+        AudioManager.Play(PositiveAudioVoice.GetRandomClip(), AudioType.Music);
+    }
+    
+    protected virtual void CheckGameStatus()
+    {
+        throw new System.NotImplementedException();
+    }
+    
+    public virtual void ScoreDown()
+    {
+        CheckGameStatus();
+        AudioManager.Play(NegativeAudioVoice.GetRandomClip(), AudioType.Music);
     }
 }

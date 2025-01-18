@@ -1,0 +1,53 @@
+.header {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+}
+
+.header Button {
+    width: 65px;
+    height: 65px;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+}
+
+.header Button:hover {
+    width: 68px;
+    height: 68px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header Button Image {
+    width: 35px;
+    height: 35px;
+}
+
+.header Shadow {
+    border-radius: 30px;
+}
+
+.title {
+    padding: 0;
+}
+
+.search .unity-base-text-field__input {
+    border-width: 0;
+    border-radius: 22px;
+}
+
+.search {
+    flex-basis: 300px;
+    height: 50px;
+}
+
+.game-list-title {
+    position: absolute;
+    top: -38px;
+    left: 23px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&guid=bdc08099c07180d4fbd441c577ab1898&type=3#Oregano-Regular");
+    font-size: 32px;
+}
+

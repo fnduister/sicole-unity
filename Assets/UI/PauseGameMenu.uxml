@@ -1,0 +1,23 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/PauseGameMenu.uss?fileID=7433441132597879392&amp;guid=bdfb4050a03103a4e8b988ae83e70a30&amp;type=3#PauseGameMenu" />
+    <Style src="project://database/Assets/UI/EndGameMenu.uss?fileID=7433441132597879392&amp;guid=112b18498ee933241ad658ea18a222fa&amp;type=3#EndGameMenu" />
+    <Style src="project://database/Assets/UI/HeaderMenu.uss?fileID=7433441132597879392&amp;guid=078c485e3be24744ca48850f418a338f&amp;type=3#HeaderMenu" />
+    <engine:VisualElement name="Background" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.6); justify-content: center; align-items: center; height: 100%;">
+        <engine:VisualElement name="Panel" style="flex-grow: 0; width: 85%; height: 65%; background-color: rgb(217, 217, 217); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; align-items: center; justify-content: space-between;">
+            <engine:VisualElement name="Header" class="header" style="flex-grow: 0; height: 100px;">
+                <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
+                    <engine:Button icon-image="project://database/Assets/Sprites/Icons/home-2-line.png?fileID=2800000&amp;guid=0528c63950cab5043bb56498ccff3616&amp;type=3#home-2-line" />
+                </Shadow>
+                <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
+                    <engine:Button icon-image="project://database/Assets/Sprites/Icons/settings-2-fill.png?fileID=2800000&amp;guid=b21fae801bc153f4b8a5a6484b87d6a0&amp;type=3#settings-2-fill" />
+                </Shadow>
+            </engine:VisualElement>
+            <engine:Label class="image" style="height: 392px; width: 501px;" />
+            <engine:VisualElement class="action-box">
+                <engine:Button text=" Restart" icon-image="project://database/Assets/Sprites/Icons/reset-left-line.svg?fileID=7388822144124034973&amp;guid=c3fc028c3ffe8f54aa6941b5b8b281ff&amp;type=3#reset-left-line" name="RestartButton" class="pause-button" style="margin-bottom: 5px;" />
+                <engine:Button text=" Quit" icon-image="project://database/Assets/Sprites/Icons/close-large-fill.svg?fileID=7388822144124034973&amp;guid=c173ac5065fe7294baa7afcde2565f5b&amp;type=3#close-large-fill" name="QuitButton" class="pause-button" style="background-color: rgb(223, 129, 237); margin-bottom: 5px;" />
+                <engine:Button text=" Continue" icon-image="project://database/Assets/Sprites/Icons/play-large-fill.svg?fileID=7388822144124034973&amp;guid=ee71f33a2fd8ee84381150ab40443e46&amp;type=3#play-large-fill" name="ResumeButton" class="pause-button" style="background-color: rgb(112, 177, 229); margin-bottom: 5px;" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

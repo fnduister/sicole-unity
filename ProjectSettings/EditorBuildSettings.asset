@@ -5,7 +5,29 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/LoginPage.unity
+    guid: 2f8b7f5fdf7592f41bf076870983b0a1
+  - enabled: 1
+    path: Assets/Scenes/syllabe3.unity
+    guid: e904ae6f5c603984294d1b7f8ccc695e
+  - enabled: 1
+    path: Assets/Scenes/Syllabe1.unity
+    guid: 47159560c973b264b9ff7bbf32492b3e
+  - enabled: 1
+    path: Assets/Scenes/Syllabe2.unity
+    guid: 72b7883c7ef75f94490bc3b7e8808b6f
+  - enabled: 1
+    path: Assets/Scenes/CategoryScene.unity
+    guid: 557d1b77047f3924d9fa006e33d8fdb9
+  - enabled: 1
+    path: Assets/Scenes/GameListScene.unity
+    guid: 883fb780ff8c60245b5879e357ad0905
+  - enabled: 1
+    path: Assets/Scenes/GroupSelectionScene.unity
+    guid: 699aed7d143dcf143a7428cdae40bc42
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

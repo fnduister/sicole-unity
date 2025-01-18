@@ -14,7 +14,9 @@ public class ProgressBarTimer: MonoBehaviour
     public delegate void ProgressBarUpdate(float progress);
     public ProgressBarUpdate OnProgressBarUpdate;
     
-    // update the currentPercent value
+    // create an event to indicate that the progress bar has reached the limit
+    public event Action OnProgressBarLimitReached;
+    
     void Update()
     {
         if (!Application.isPlaying || !_isRunning) return;
@@ -25,7 +27,6 @@ public class ProgressBarTimer: MonoBehaviour
         }
         else
         {
-            _currentPercent = ValueLimit;
             _currentPercent = MinValue;
 
             // if it's one shot, stop the progress bar when it reaches the limit
@@ -33,9 +34,22 @@ public class ProgressBarTimer: MonoBehaviour
             {
                 _isRunning = false;
             }
+            
+            OnProgressBarLimitReached?.Invoke();
         }
         
         OnProgressBarUpdate?.Invoke(_currentPercent);
+    }
+
+    public void Pause()
+    {
+        _isRunning = false;
+    }
+
+    public void Reset()
+    {
+        _currentPercent = 0;
+        _isRunning = true;
     }
 
 

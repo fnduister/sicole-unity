@@ -4,3 +4,26 @@
 .main-menu-btn {
     color: rgb(255, 255, 255);
 }
+
+.background {
+    background-color: rgb(0, 150, 0);
+}
+
+.title {
+    padding: 0;
+}
+
+.sub-title {
+    margin-top: -50px;
+    margin-bottom: 40px;
+    font-size: 6px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&guid=bdc08099c07180d4fbd441c577ab1898&type=3#Oregano-Regular");
+}
+
+.input {
+    margin: 20px 0;
+    width: 350px;
+    height: 60px;
+    border-radius: 15px;
+    border-width: 0;
+}

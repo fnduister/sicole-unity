@@ -8,6 +8,6 @@ public class AudioVoice : ScriptableObject
     // get random audio clip
     public string GetRandomClip()
     {
-        return audioClips[Random.Range(0, audioClips.Length)];
+        return audioClips[Random.Range(0, audioClips.Length)];         
     }
 }

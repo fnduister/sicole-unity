@@ -1,0 +1,67 @@
+.panel-container {
+    flex-grow: 8;
+    flex-direction: row;
+    margin-bottom: 45px;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.title {
+    padding: 0;
+}
+
+.sub-title {
+    margin-top: -50px;
+    margin-bottom: 40px;
+    font-size: 32px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&guid=bdc08099c07180d4fbd441c577ab1898&type=3#Oregano-Regular");
+}
+
+.age-panel-box Button:hover {
+    background-color: rgb(255, 255, 255);
+    transition: 1s ease;
+}
+
+.age-bubble Button:hover {
+    height: 50px;
+    width: 50px;
+    transition: 1s ease;
+}
+
+.age-panel-box Button {
+    width: 100%;
+    height: 100%;
+    border-width: 0;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.age-panel-box {
+    flex-grow: 1;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border-color: red;
+    height: 45%;
+    border-width: 3px;
+    align-items: center;
+    flex-basis: 30%;
+    justify-content: space-around;
+    margin: 25px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&guid=bdc08099c07180d4fbd441c577ab1898&type=3#Oregano-Regular");
+}
+
+.age-bubble {
+    flex-grow: 1;
+    background-color: rgb(226, 160, 191);
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    border-width: 2px;
+    border-color: white;
+    position: absolute;
+    top: -25px;
+    right: -25px;
+}

@@ -1,0 +1,39 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/HomeMenu.uss?fileID=7433441132597879392&amp;guid=849c2c00a35405b41b918d3036192c5a&amp;type=3#HomeMenu" />
+    <Style src="project://database/Assets/UI/HeaderMenu.uss?fileID=7433441132597879392&amp;guid=078c485e3be24744ca48850f418a338f&amp;type=3#HeaderMenu" />
+    <engine:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Capture%20d%E2%80%99%C3%A9cran%202025-01-05%20012520.png?fileID=2800000&amp;guid=7dff896e8a82a6f41bcc4fbfc76d9488&amp;type=3#Capture d’écran 2025-01-05 012520&quot;);">
+        <engine:VisualElement name="Header" class="header" style="flex-grow: 0; height: 100px; flex-direction: row-reverse;">
+            <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
+                <engine:Button icon-image="project://database/Assets/Sprites/Icons/settings-2-fill.png?fileID=2800000&amp;guid=b21fae801bc153f4b8a5a6484b87d6a0&amp;type=3#settings-2-fill" name="SettingsButton" />
+            </Shadow>
+            <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
+                <engine:Button icon-image="project://database/Assets/Sprites/Icons/home-2-line.png?fileID=2800000&amp;guid=0528c63950cab5043bb56498ccff3616&amp;type=3#home-2-line" name="HomeButton" />
+            </Shadow>
+        </engine:VisualElement>
+        <engine:VisualElement name="TitleContainer" style="flex-grow: 1; align-items: center; justify-content: center;">
+            <engine:Label name="Sicole" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/OvertheRainbow-Regular.ttf?fileID=12800000&amp;guid=79ece736ddf520c4d9b9fc2e236ee44b&amp;type=3#OvertheRainbow-Regular&quot;); font-size: 82px; background-image: url(&quot;project://database/Assets/Sprites/catface.svg?fileID=7388822144124034973&amp;guid=cf6fe69a51c39004086fa800c6d27973&amp;type=3#catface&quot;); height: 143px; width: 153px;" />
+            <engine:VisualElement class="sub-title-hello" style="flex-grow: 0; flex-direction: row; flex-shrink: 0;">
+                <engine:Label text="Hello" />
+                <engine:Label text="Abigael" class="name" />
+            </engine:VisualElement>
+        </engine:VisualElement>
+        <engine:VisualElement name="PanelContainer" class="panel-container" style="flex-direction: row; align-items: stretch; justify-content: space-between; align-self: stretch; flex-wrap: wrap;">
+            <engine:Button name="NumbersButton" class="panel-box" style="border-left-color: rgb(229, 87, 178); border-right-color: rgb(229, 87, 178); border-top-color: rgb(229, 87, 178); border-bottom-color: rgb(229, 87, 178);">
+                <engine:Label class="box-image" style="background-image: url(&quot;project://database/Assets/Sprites/Numbers.svg?fileID=7388822144124034973&amp;guid=5906c3e96b3b9da4e8b5a5b6cbc5529a&amp;type=3#Numbers&quot;);" />
+                <engine:Label text="Numbers" class="box-label" style="background-color: rgba(229, 88, 179, 0); color: rgb(228, 78, 171);" />
+            </engine:Button>
+            <engine:Button name="PuzzlesButton" class="panel-box" style="border-left-color: rgb(191, 233, 184); border-right-color: rgb(191, 233, 184); border-top-color: rgb(191, 233, 184); border-bottom-color: rgb(191, 233, 184);">
+                <engine:Label class="box-image" style="background-image: url(&quot;project://database/Assets/Sprites/heart.svg?fileID=7388822144124034973&amp;guid=e8fdac5d10fbb334fbec35caefc1e0b3&amp;type=3#heart&quot;);" />
+                <engine:Label text="Puzzles" class="box-label" style="background-color: rgba(0, 150, 11, 0); color: rgb(0, 150, 11);" />
+            </engine:Button>
+            <engine:Button text="Button" name="LettersButton" class="panel-box" style="border-left-color: rgb(253, 214, 70); border-right-color: rgb(253, 214, 70); border-top-color: rgb(253, 214, 70); border-bottom-color: rgb(253, 214, 70);">
+                <engine:Label class="box-image" style="background-image: url(&quot;project://database/Assets/Sprites/abcs.svg?fileID=7388822144124034973&amp;guid=76cd7a91f80db8645a079b20280fa3b3&amp;type=3#abcs&quot;); border-left-color: rgba(253, 214, 71, 0); border-right-color: rgba(253, 214, 71, 0); border-top-color: rgba(253, 214, 71, 0); border-bottom-color: rgba(253, 214, 71, 0);" />
+                <engine:Label text="Letters" name="Label" class="box-label" style="background-color: rgba(143, 118, 0, 0); color: rgb(173, 136, 0);" />
+            </engine:Button>
+            <engine:Button text="Button" name="DrawingButton" class="panel-box" style="border-left-color: rgb(97, 187, 246); border-right-color: rgb(97, 187, 246); border-top-color: rgb(97, 187, 246); border-bottom-color: rgb(97, 187, 246);">
+                <engine:Label class="box-image" style="background-image: url(&quot;project://database/Assets/Sprites/pen.svg?fileID=7388822144124034973&amp;guid=46d84e6d2a2882741af0649564510196&amp;type=3#pen&quot;);" />
+                <engine:Label text="Drawing" class="box-label" style="background-color: rgba(89, 107, 194, 0); color: rgb(3, 133, 219);" />
+            </engine:Button>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

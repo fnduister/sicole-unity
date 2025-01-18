@@ -1,0 +1,95 @@
+.title {
+    padding: 0;
+}
+
+.sub-title {
+    margin-top: -50px;
+    margin-bottom: 40px;
+    font-size: 32px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&guid=bdc08099c07180d4fbd441c577ab1898&type=3#Oregano-Regular");
+}
+
+.panel-container {
+    flex-grow: 8;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.panel-box {
+    flex-grow: 1;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border-color: red;
+    height: 45%;
+    border-width: 3px;
+    align-items: center;
+    flex-basis: 40%;
+    justify-content: space-around;
+    margin: 15px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&guid=bdc08099c07180d4fbd441c577ab1898&type=3#Oregano-Regular");
+}
+
+.panel-box .box-image {
+    height: 45%;
+    width: 50%;
+}
+
+.panel-box Button {
+    font-size: 20px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    border-color: white;
+    border-width: 1px;
+    right: -15px;
+    top: -15px;
+}
+
+.panel-container Button {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.panel-container Button:hover {
+    background-color: rgb(255, 255, 255);
+    transition: 1s ease;
+}
+
+.panel-container Button:hover .box-image {
+    height: 55%;
+    width: 60%;
+    transition: 0.5s ease;
+}
+
+.box-label {
+    font-size: 32px;
+}
+
+.sub-title-hello {
+    -unity-font-definition: url("project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&guid=bdc08099c07180d4fbd441c577ab1898&type=3#Oregano-Regular");
+    font-size: 32px;
+}
+
+.name {
+    color: rgb(255, 104, 104);
+}
+
+.panel-box {
+    flex-grow: 1;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border-color: red;
+    height: 45%;
+    border-width: 3px;
+    align-items: center;
+    flex-basis: 40%;
+    justify-content: space-around;
+    margin: 15px;
+    -unity-font-definition: url("project://database/Assets/Fonts/Oregano-Regular.ttf?fileID=12800000&guid=bdc08099c07180d4fbd441c577ab1898&type=3#Oregano-Regular");
+}

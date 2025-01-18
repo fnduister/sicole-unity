@@ -3,13 +3,16 @@
     justify-content: space-around;
     height: 100px;
     align-items: center;
+    border-radius: 15px;
     padding: 5px;
-    background-color: #BDC3C7;
+    background-color: rgb(189, 195, 199);
 }
 
 .header-in-game-menu Button {
-    width: 75px;
+    flex-basis: 50;
     background-color: rgb(243, 156, 18);
+    border-width: 0;
+    border-radius: 10px;
 }
 
 .header-in-game-menu Button:hover {
@@ -17,7 +20,7 @@
 }
 
 .score-good-moves {
-    background-color: #2ECC71;
+    background-color: rgb(46, 204, 113);
     margin-right: 5px;
 }
 
@@ -39,17 +42,23 @@
 
 .score-in-game-menu Label {
     height: 100%;
+    border-radius: 10px;
+}
+
+.no-border-radius {
+    border-width: 0;
+    border-radius: 15px;
 }
 
 .header-in-game-menu Label {
     flex-basis: 50;
     -unity-text-align: middle-center;
-    border-width: 1px;
-    border-color: #999999;
+    border-width: 0;
+    border-color: rgb(153, 153, 153);
 }
 
 .score-moves {
-    background-color: #E67E22;
+    background-color: rgb(230, 126, 34);
 }
 
 .score-points-in-game-menu {
@@ -57,10 +66,21 @@
 }
 
 .round-label {
-    background-color: #ECF0F1;
+    border-radius: 10px;
+    background-color: rgb(236, 240, 241);
     height: 50px;
 }
 
 .progress-bar {
     margin-bottom: 15px;
+}
+
+.unity-progress-bar__background {
+    border-radius: 10px;
+    background-color: rgb(189, 195, 199);
+}
+
+.unity-progress-bar__progress {
+    border-radius: 10px;
+    background-color: #e74c3c;
 }

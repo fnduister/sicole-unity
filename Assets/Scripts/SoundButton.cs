@@ -18,6 +18,6 @@ public class SoundButton : MonoBehaviour
 
     void PlaySound()
     {
-        AudioManager.Play(syllabus);
+        AudioManager.Play(syllabus, AudioType.Music);
     }
 }
