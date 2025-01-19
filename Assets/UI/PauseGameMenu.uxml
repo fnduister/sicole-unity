@@ -6,17 +6,19 @@
         <engine:VisualElement name="Panel" style="flex-grow: 0; width: 85%; height: 65%; background-color: rgb(217, 217, 217); border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; align-items: center; justify-content: space-between;">
             <engine:VisualElement name="Header" class="header" style="flex-grow: 0; height: 100px;">
                 <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
-                    <engine:Button icon-image="project://database/Assets/Sprites/Icons/home-2-line.png?fileID=2800000&amp;guid=0528c63950cab5043bb56498ccff3616&amp;type=3#home-2-line" />
+                    <engine:Button icon-image="project://database/Assets/Sprites/Icons/home-2-line.png?fileID=2800000&amp;guid=0528c63950cab5043bb56498ccff3616&amp;type=3#home-2-line" name="HomeButton" />
                 </Shadow>
                 <Shadow shadow-corner-radius="68" shadow-offset-x="10" shadow-scale="0.5" shadow-offset-y="10" name="Shadow">
-                    <engine:Button icon-image="project://database/Assets/Sprites/Icons/settings-2-fill.png?fileID=2800000&amp;guid=b21fae801bc153f4b8a5a6484b87d6a0&amp;type=3#settings-2-fill" />
+                    <engine:Button icon-image="project://database/Assets/Sprites/Icons/settings-2-fill.png?fileID=2800000&amp;guid=b21fae801bc153f4b8a5a6484b87d6a0&amp;type=3#settings-2-fill" name="SettingButton" />
                 </Shadow>
             </engine:VisualElement>
-            <engine:Label class="image" style="height: 392px; width: 501px;" />
-            <engine:VisualElement class="action-box">
-                <engine:Button text=" Restart" icon-image="project://database/Assets/Sprites/Icons/reset-left-line.svg?fileID=7388822144124034973&amp;guid=c3fc028c3ffe8f54aa6941b5b8b281ff&amp;type=3#reset-left-line" name="RestartButton" class="pause-button" style="margin-bottom: 5px;" />
-                <engine:Button text=" Quit" icon-image="project://database/Assets/Sprites/Icons/close-large-fill.svg?fileID=7388822144124034973&amp;guid=c173ac5065fe7294baa7afcde2565f5b&amp;type=3#close-large-fill" name="QuitButton" class="pause-button" style="background-color: rgb(223, 129, 237); margin-bottom: 5px;" />
-                <engine:Button text=" Continue" icon-image="project://database/Assets/Sprites/Icons/play-large-fill.svg?fileID=7388822144124034973&amp;guid=ee71f33a2fd8ee84381150ab40443e46&amp;type=3#play-large-fill" name="ResumeButton" class="pause-button" style="background-color: rgb(112, 177, 229); margin-bottom: 5px;" />
+            <engine:VisualElement style="flex-grow: 1; width: 100%;">
+                <engine:Label class="image" style="height: auto; width: 80%; flex-grow: 3; flex-shrink: 3; flex-basis: 150px;" />
+                <engine:VisualElement class="action-box" style="flex-grow: 1;">
+                    <engine:Button text=" Restart" icon-image="project://database/Assets/Sprites/Icons/reset-left-line.svg?fileID=7388822144124034973&amp;guid=c3fc028c3ffe8f54aa6941b5b8b281ff&amp;type=3#reset-left-line" name="RestartButton" class="pause-button" style="margin-bottom: 5px;" />
+                    <engine:Button text=" Quit" icon-image="project://database/Assets/Sprites/Icons/close-large-fill.svg?fileID=7388822144124034973&amp;guid=c173ac5065fe7294baa7afcde2565f5b&amp;type=3#close-large-fill" name="QuitButton" class="pause-button" style="background-color: rgb(223, 129, 237); margin-bottom: 5px;" />
+                    <engine:Button text=" Continue" icon-image="project://database/Assets/Sprites/Icons/play-large-fill.svg?fileID=7388822144124034973&amp;guid=ee71f33a2fd8ee84381150ab40443e46&amp;type=3#play-large-fill" name="ResumeButton" class="pause-button" style="background-color: rgb(112, 177, 229); margin-bottom: 5px;" />
+                </engine:VisualElement>
             </engine:VisualElement>
         </engine:VisualElement>
     </engine:VisualElement>

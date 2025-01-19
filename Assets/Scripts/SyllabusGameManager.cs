@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UIElements;
-using Random = UnityEngine.Random;
 
 public class SyllabusGameManager: MonoBehaviour
 {
@@ -17,7 +13,7 @@ public class SyllabusGameManager: MonoBehaviour
     public float roundProgress = 0;
     public float roundLimit = 100;
     [Range(1, 50)]
-    public float speed = 1;
+    public float speed = 10;
     public GameObject PauseGameMenu;
     public GameObject GameOverMenu;
 
@@ -58,19 +54,6 @@ public class SyllabusGameManager: MonoBehaviour
     {
         ProgressBarTimer.OnProgressBarLimitReached -= UpdateGameState;
         ProgressBarTimer.OnProgressBarUpdate -= OnProgressBarChange;
-    }
-
-    protected int[] GenerateDistinctIntegers(int n, int minValue, int maxValue)
-    {
-        var uniqueIntegers = new HashSet<int>();
-        
-        while (uniqueIntegers.Count < n)
-        {
-            int newInt = Random.Range(minValue, maxValue);
-            uniqueIntegers.Add(newInt);
-        }
-        
-        return uniqueIntegers.ToArray();
     }
 
     // function listening to progress bar event

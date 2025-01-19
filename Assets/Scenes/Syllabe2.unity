@@ -2104,19 +2104,11 @@ MonoBehaviour:
   PositiveAudioVoice: {fileID: 11400000, guid: 5e25b38e7764d8a469f763f9d50ec644, type: 2}
   NegativeAudioVoice: {fileID: 11400000, guid: dbedb830b0ce0b14f8e2300a23089bfb, type: 2}
   roundProgress: 0
-  roundLimit: 10
+  roundLimit: 100
   speed: 5
   PauseGameMenu: {fileID: 1188555224}
   GameOverMenu: {fileID: 1784341455}
-  PossibleSyllabes:
-  - mi
-  - ma
-  - mu
-  - pa
-  - pu
-  - ta
-  - ti
-  - tu
+  PossibleSyllabes: {fileID: 11400000, guid: 2070aaf3a82e6d346a06941a37ca7658, type: 2}
   Letterbuttons:
   - {fileID: 183235698}
   - {fileID: 1843185058}

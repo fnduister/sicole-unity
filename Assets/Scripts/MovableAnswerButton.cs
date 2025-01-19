@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class AnswerButton : MonoBehaviour, IDropHandler
+public class MoveableAnswerButton : MonoBehaviour, IDropHandler
 {
     public int buttonId;
     public string ExpectedLetter;
     public GameObject GameManager;
     public bool GoodAnswerPopulated = false;
+    
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag == null) return;

@@ -1,19 +1,15 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Question", menuName = "QuestionSyllabe1", order = 0)]
+[CreateAssetMenu(fileName = "New Choices", menuName = "QuestionSyllabe1", order = 0)]
 public class QuestionSO : ScriptableObject
 {
-    [SerializeField] string[] choices = new string[4];
-    [SerializeField] int answerIndex = 0;
+    [SerializeField] List<string> choices = new List<string>();
     
-    public string[] GetChoices()
+    public List<string> GetChoices(int n)
     {
-        return choices;
-    }
-    
-    public int GetAnswerIndex()
-    {
-        return answerIndex;
+        var indexes = Helpers.GenerateDistinctIntegers(n);
+        return indexes.Select(index => choices[index]).ToList();
     }
 }

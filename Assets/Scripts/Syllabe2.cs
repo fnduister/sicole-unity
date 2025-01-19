@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Syllabe2 : SyllabusGameManager
 {
-    public string[] PossibleSyllabes = new string[8];
+    public QuestionSO PossibleSyllabes;
     public GameObject[] Letterbuttons = new GameObject[8];
     public GameObject[] SoundButtons = new GameObject[4];
     public GameObject[] AnswerButtons = new GameObject[8];
@@ -24,16 +24,9 @@ public class Syllabe2 : SyllabusGameManager
         }
         
         // get 4 random syllabes
-        string[] syllabes = new string[4];
-        
-        var possibleSyllabesIndexes = GenerateDistinctIntegers(4, 0, 8);
-        
-        for (int i = 0; i < 4; i++)
-        {
-            syllabes[i] = PossibleSyllabes[possibleSyllabesIndexes[i]];
-        }
+        string[] syllabes = PossibleSyllabes.GetChoices(4).ToArray();
 
-        var letterRandomIndex = GenerateDistinctIntegers(8, 0, 8);
+        var letterRandomIndex = Helpers.GenerateDistinctIntegers(8, 0, 8);
         
         for (int i = 0; i < 4; i++)
         {
@@ -45,8 +38,8 @@ public class Syllabe2 : SyllabusGameManager
             Letterbuttons[letterRandomIndex[second]].GetComponent<LetterButton>().letter = syllabes[i][1].ToString();
             
             // set the answer buttons expected letter
-            AnswerButtons[first].GetComponent<AnswerButton>().ExpectedLetter = syllabes[i][0].ToString();
-            AnswerButtons[second].GetComponent<AnswerButton>().ExpectedLetter = syllabes[i][1].ToString();
+            AnswerButtons[first].GetComponent<MoveableAnswerButton>().ExpectedLetter = syllabes[i][0].ToString();
+            AnswerButtons[second].GetComponent<MoveableAnswerButton>().ExpectedLetter = syllabes[i][1].ToString();
             
             // set the sound buttons expected letter
             SoundButtons[i].GetComponent<SoundButton>().syllabus = syllabes[i];
@@ -74,7 +67,7 @@ public class Syllabe2 : SyllabusGameManager
     {
         if (GoodMoves != 0 && GoodMoves % AnswerButtons.Length == 0 || Moves <= 0)
         {
-            UpdateGameState();
+            Invoke(nameof(UpdateGameState), 2);
         }
     }
 
