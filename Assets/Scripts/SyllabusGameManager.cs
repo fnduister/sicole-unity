@@ -1,101 +1,107 @@
 ﻿using UnityEngine;
-using UnityEngine.UIElements;
 
-public class SyllabusGameManager: MonoBehaviour
+public class SyllabusGameManager : GameManager
 {
+    [Header("Syllabus Game Settings")]
     public string RoundDisplay;
-    [Range(1, 50)]
-    public int MaxRound = 3;
-    protected int _currentRound = 1;
-    public ProgressBarTimer ProgressBarTimer;
-    public AudioVoice PositiveAudioVoice; 
-    public AudioVoice NegativeAudioVoice;
-    public float roundProgress = 0;
-    public float roundLimit = 100;
-    [Range(1, 50)]
-    public float speed = 10;
-    public GameObject PauseGameMenu;
-    public GameObject GameOverMenu;
 
-    public virtual int GetScore()
+    private QuestionManager _questionManager;
+    private int _correctAnswers = 0;
+    private int _totalQuestions = 0;
+
+    public override GameCategory GameCategory => GameCategory.Syllabus;
+
+    protected override void InitializeGameSpecificData(GameConfig.SceneData gameData)
     {
-        throw new System.NotImplementedException();
-    }
-    
-    protected virtual void Reset()
-    {
-        ProgressBarTimer.OnProgressBarLimitReached -= UpdateGameState;
-        ProgressBarTimer.OnProgressBarUpdate -= OnProgressBarChange;
-        Time.timeScale = 1;
-        ProgressBarTimer.Reset();
-        SetRound();
+        _questionManager = GetComponent<QuestionManager>();
+        if (_questionManager == null)
+        {
+            _questionManager = gameObject.AddComponent<QuestionManager>();
+        }
+
+        // Get questions directly from GameConfig scriptable object
+        if (gameData.Questions == null || gameData.Questions.Length == 0)
+        {
+            Debug.LogError("No questions found in GameConfig scriptable object!");
+            return;
+        }
+
+        InitializeQuestionsFromGameConfig(gameData.Questions);
     }
 
-    public void Start()
+    private void InitializeQuestionsFromGameConfig(GameConfig.QuestionData[] questionData)
     {
-        Reset();
-        ProgressBarTimer.OnProgressBarUpdate += OnProgressBarChange;
-        ProgressBarTimer.OnProgressBarLimitReached += UpdateGameState;
-        ProgressBarTimer.ValueLimit = roundLimit;
-        ProgressBarTimer.Speed = speed;
-        ProgressBarTimer.IsOneShot = true;
-        // Instantiate a new pause menu and game over menu
-        PauseGameMenu.SetActive(false);
-        GameOverMenu.SetActive(false);
+        // Convert GameConfig.QuestionData to Question objects
+        var questions = new Question[questionData.Length];
+        for (int i = 0; i < questionData.Length; i++)
+        {
+            questions[i] = new Question
+            {
+                QuestionText = questionData[i].Question,
+                Choices = questionData[i].Answers,
+                CorrectAnswerIndex = questionData[i].CorrectAnswerIndex
+            };
+        }
+
+        _questionManager.SetQuestions(questions);
+        _totalQuestions = questions.Length;
+        
+        Debug.Log($"Loaded {_totalQuestions} questions from GameConfig");
     }
 
-    protected virtual void SetRound()
+    public override int GetScore()
     {
-        throw new System.NotImplementedException();
+        return _correctAnswers;
     }
 
-    // Remove listener when the object is destroyed
-    void OnDisable()
+    protected override void UpdateGameState()
     {
-        ProgressBarTimer.OnProgressBarLimitReached -= UpdateGameState;
-        ProgressBarTimer.OnProgressBarUpdate -= OnProgressBarChange;
+        if (_questionManager != null && _questionManager.IsQuestionAnswered())
+        {
+            if (_questionManager.IsLastAnswerCorrect())
+            {
+                _correctAnswers++;
+                OnPositiveAction();
+            }
+            else
+            {
+                OnNegativeAction();
+            }
+
+            _currentRound++;
+
+            if (_currentRound <= MaxRounds && _questionManager.HasMoreQuestions())
+            {
+                _questionManager.ShowNextQuestion();
+                UpdateRoundDisplay();
+            }
+            else
+            {
+                CheckGameStatus();
+            }
+        }
     }
 
-    // function listening to progress bar event
-    private void OnProgressBarChange(float progress)
+    protected override void CheckGameStatus()
     {
-        roundProgress = progress;
+        if (_currentRound > MaxRounds || !_questionManager.HasMoreQuestions())
+        {
+            UIManager?.ShowGameComplete(GetScore(), _totalQuestions);
+        }
     }
 
-    protected virtual void UpdateGameState()
+    private void UpdateRoundDisplay()
     {
-        throw new System.NotImplementedException();
-    }
-    
-    public virtual void PauseGame()
-    {
-        Time.timeScale = 0;
-        PauseGameMenu.GetComponent<UIDocument>().sortingOrder = 50;
-        ProgressBarTimer.Pause();
-        PauseGameMenu.SetActive(true);
-    }
-    
-    public virtual void ResumeGame()
-    {
-        Time.timeScale = 1;
-        ProgressBarTimer.Start();
-        PauseGameMenu.SetActive(false);
+        RoundDisplay = $"Round {_currentRound}/{MaxRounds}";
+        UIManager?.UpdateRoundDisplay(RoundDisplay);
     }
 
-    public virtual void ScoreUp()
+    public void AnswerSelected(int answerIndex)
     {
-        CheckGameStatus();
-        AudioManager.Play(PositiveAudioVoice.GetRandomClip(), AudioType.Music);
-    }
-    
-    protected virtual void CheckGameStatus()
-    {
-        throw new System.NotImplementedException();
-    }
-    
-    public virtual void ScoreDown()
-    {
-        CheckGameStatus();
-        AudioManager.Play(NegativeAudioVoice.GetRandomClip(), AudioType.Music);
+        if (_questionManager != null && !_questionManager.IsQuestionAnswered())
+        {
+            _questionManager.AnswerQuestion(answerIndex);
+            UpdateGameState();
+        }
     }
 }

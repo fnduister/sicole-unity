@@ -16,7 +16,7 @@ public class SoundButton : MonoBehaviour
         }
     }
 
-    void PlaySound()
+    public void PlaySound()
     {
         AudioManager.Play(syllabus, AudioType.Music);
     }

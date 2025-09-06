@@ -29,7 +29,7 @@ public class GroupSelection : MonoBehaviour
     private void LoadGameSelectionScene()
     {
         Debug.Log("loading scene");
-        SceneManager.LoadScene("CategoryScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("CategoryScene");
     }
 
     private void OnDisable()

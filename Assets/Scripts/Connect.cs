@@ -28,7 +28,7 @@ public class Connect : MonoBehaviour
     private void OnLogin()
     {
         Debug.Log("Logging");
-        SceneManager.LoadScene("GroupSelectionScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GroupSelectionScene");
     }
 
     private void OnDisable()

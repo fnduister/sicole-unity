@@ -16,7 +16,7 @@ public class HeaderNavigation : MonoBehaviour
 
         if (_homeButton != null)
         {
-            _homeButtonAction = () => SceneManager.LoadScene("GroupSelectionScene");
+            _homeButtonAction = () => UnityEngine.SceneManagement.SceneManager.LoadScene("GroupSelectionScene");
             _homeButton.clicked += _homeButtonAction;
         }
         else

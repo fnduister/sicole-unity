@@ -23,7 +23,7 @@ public class GameSelection : MonoBehaviour
     private void LoadGameSelectionScene(string scene)
     {
         Debug.Log("loading scene");
-        SceneManager.LoadScene(scene);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
     }
 
     private void OnDisable()

@@ -17,7 +17,7 @@
                 <engine:VisualElement style="flex-grow: 0; flex-direction: row; flex-shrink: 0;">
                     <engine:Label name="Star1" class="star star-half" />
                     <engine:Label name="Star2" class="star star-full" />
-                    <engine:Label name="Star3" class="star-empty star" style="background-image: resource(&apos;Icons/star-line&apos;);" />
+                    <engine:Label name="Star3" class="star star-full" />
                 </engine:VisualElement>
                 <engine:VisualElement class="score-panel" style="flex-grow: 0; flex-direction: row; width: 100%; background-color: rgba(255, 255, 255, 0.79); padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; border-top-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-bottom-left-radius: 15px;">
                     <engine:VisualElement style="flex-grow: 1; align-items: center;">

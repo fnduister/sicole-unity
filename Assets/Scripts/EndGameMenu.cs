@@ -13,11 +13,11 @@ public class EndGameMenu : MonoBehaviour
     private Button _scoreButton;
     private Button _bestScoreButton;
     public GameObject Manager;
-    private SyllabusGameManager _manager;
+    private GameManager _manager;
 
     private void OnEnable()
     {
-        _manager = Manager.GetComponent<SyllabusGameManager>();
+        _manager = Manager.GetComponent<GameManager>();
         
         var root = GetComponent<UIDocument>().rootVisualElement;
         

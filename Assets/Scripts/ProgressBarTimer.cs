@@ -4,9 +4,11 @@ using UnityEngine;
 public class ProgressBarTimer: MonoBehaviour
 {
     public float MinValue = 0;
+    public float CurrentPercent => _currentPercent; // Add public accessor
     private float _currentPercent;
     [Range(0, 100)] public float Speed;
     public float ValueLimit = 100;
+    public bool IsRunning => _isRunning; // Add public accessor
     private bool _isRunning = false;
     public bool IsOneShot = false;
     

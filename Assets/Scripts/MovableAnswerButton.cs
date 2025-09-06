@@ -25,14 +25,14 @@ public class MoveableAnswerButton : MonoBehaviour, IDropHandler
             // move button can be moved anymore
             eventData.pointerDrag.GetComponent<MoveButton>().IsCorrect = true;
                 
-            GameManager.GetComponent<SyllabusGameManager>().ScoreUp();
+            GameManager.GetComponent<GameManager>().ScoreUp();
                 
             // chenge the color of the letter to green
             eventData.pointerDrag.GetComponent<LetterButton>().GetComponent<UnityEngine.UI.Image>().color = Color.green;
         }
         else
         {
-            GameManager.GetComponent<SyllabusGameManager>().ScoreDown();
+            GameManager.GetComponent<GameManager>().ScoreDown();
             eventData.pointerDrag.GetComponent<LetterButton>().GetComponent<UnityEngine.UI.Image>().color = Color.red;
             Debug.Log("incorrect");
         }

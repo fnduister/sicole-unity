@@ -3,12 +3,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-enum GameCategory
+public enum GameCategory
 {
     Letters,
     Numbers,
     Puzzles,
-    Drawing
+    Drawing,
+    Syllabus
 }
 
 public class SelectCategory : MonoBehaviour
@@ -52,19 +53,19 @@ public class SelectCategory : MonoBehaviour
         switch (category)
         {
             case GameCategory.Letters:
-                SceneManager.LoadScene("GameListScene");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("GameListScene");
                 Debug.Log("Letters");
                 break;
             case GameCategory.Numbers:
-                SceneManager.LoadScene("GameListScene");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("GameListScene");
                 Debug.Log("Numbers");
                 break;
             case GameCategory.Puzzles:
-                SceneManager.LoadScene("GameListScene");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("GameListScene");
                 Debug.Log("Puzzles");
                 break;
             case GameCategory.Drawing:
-                SceneManager.LoadScene("GameListScene");
+                UnityEngine.SceneManagement.SceneManager.LoadScene("GameListScene");
                 Debug.Log("Drawing");
                 break;
             default:

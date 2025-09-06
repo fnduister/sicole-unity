@@ -19,7 +19,7 @@ public class PauseGameMenu : MonoBehaviour
         if(_quitButton == null || _resumeButton == null || _restartButton == null)
             throw new System.Exception("Missing fields in GroupSelection");
         
-        _quitButton.clicked += () => SceneManager.LoadScene("GameListScene");
+        _quitButton.clicked += () => UnityEngine.SceneManagement.SceneManager.LoadScene("GameListScene");
         _resumeButton.clicked += () => GameManager.ResumeGame();
         _restartButton.clicked += () => GameManager.Start();
     }
